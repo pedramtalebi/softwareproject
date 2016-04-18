@@ -1,3 +1,5 @@
 /node_modules
 *.swp
 /dist
+/.idea
+.DS_Store
