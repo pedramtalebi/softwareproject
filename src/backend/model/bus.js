@@ -3,13 +3,28 @@
 var mongoose = require('mongoose');
 
 var busSchema = new bus.Schema({
-    id: {type: String, unique: true},
-    driver: {type: String, unique: true},
+  id: {type: String, unique: true},
+  driver: {type: String, unique: true},
 
-    created_at: Date,
-    updated_at: Date
+  created_at: Date,
+  updated_at: Date
 });
 
-var bus = mongoose.model('bus', busSchema);
+busSchema.pre('save', function (next) {
+  var currentDate = new Date();
+  this.updated_at = currentDate;
 
-module.exports = bus;
+  if (!this.created_at) {
+    this.created_at = currentDate;
+  }
+
+  if (!this.id) {
+    this.id = uuid.v4();
+  }
+
+  next();
+});
+
+var Bus = mongoose.model('bus', busSchema);
+
+module.exports = Bus;
