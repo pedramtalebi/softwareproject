@@ -29,6 +29,7 @@
     "lodash": "^4.11.1",
     "mongo": "^0.1.0",
     "mongodb": "^2.1.16",
-    "mongoose": "^4.4.12"
+    "mongoose": "^4.4.12",
+    "node-uuid": "^1.4.7"
   }
 }
