@@ -24,6 +24,10 @@ router.get('/v1/line', (req, res) => {
 
 
 //POST /lines -Post a new line -> FORBIDDEN! Should  be handled
+router.post('/v1/line', (req, res) => {
+    res.sendStatus(401);
+});
+
 
 //GET /lines:id -Gets a line with a specific ID
 router.get('/v1/line/:id', (req, res) => {
