@@ -2,7 +2,7 @@
 
 var mongoose = require('mongoose');
 
-var busSchema = new bus.Schema({
+var busSchema = new mongoose.Schema({
   id: {type: String, unique: true},
   driver: {type: String, unique: true},
 
