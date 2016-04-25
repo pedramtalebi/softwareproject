@@ -3,7 +3,8 @@ import mongoose from 'mongoose';
 
 import rerouteApi from './routes/reroute-api';
 
-mongoose.connect('mongodb://mongo/softwareproject');
+mongoose.connect('mongodb://localhost/database');
+//mongoose.connect('mongodb://mongo/softwareproject');
 
 var app = express();
 app.use('/', express.static(__dirname + '/public'));
