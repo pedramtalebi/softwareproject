@@ -1,10 +1,12 @@
 //Line in database, containing a path to a .jpg of the map and a line number.
 
 var mongoose = require('mongoose');
+var uuid = require('node-uuid');
 
-var lineSchema = new line.Schema({
+var lineSchema = new mongoose.Schema({
     map: {type: String},
     nr: {type: String, unique: true},
+    buses: [Number],
 
     created_at: Date,
     updated_at: Date
@@ -28,4 +30,4 @@ lineSchema.pre('save', function (next) {
 
 var Line = mongoose.model('line', lineSchema);
 
-module.exports = line;
+module.exports = Line;
