@@ -3,6 +3,8 @@ package se.moosechrunchers.appfrontend;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.net.URISyntaxException;
@@ -15,13 +17,13 @@ import io.socket.client.Socket;
 import io.socket.emitter.Emitter;
 
 public class MainActivity extends AppCompatActivity {
-    private final String BACKEND_URL = "http://192.168.99.1:3000";
 
     private TextView txtView;
 
     private Socket mSocket;
     {
         try {
+            String BACKEND_URL = "http://192.168.99.1:3000";
             mSocket = IO.socket(BACKEND_URL);
         } catch (URISyntaxException e) {
             Log.e("moosecrunchers", e.getMessage());
@@ -31,13 +33,18 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
         txtView = (TextView)findViewById(R.id.txtView);
+        Button btnIncrease = (Button)findViewById(R.id.btnIncrease);
 
-        IO.setDefaultHostnameVerifier(new HostnameVerifier() {
+        assert btnIncrease != null;
+        btnIncrease.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean verify(String hostname, SSLSession session) {
-                return true;
+            public void onClick(View v) {
+                if (mSocket != null) {
+                    mSocket.emit("update request", "");
+                }
             }
         });
 
@@ -50,25 +57,46 @@ public class MainActivity extends AppCompatActivity {
         mSocket.on(Socket.EVENT_CONNECT_ERROR, new Emitter.Listener() {
             @Override
             public void call(Object... args) {
-                for (int i = 0; i < args.length; i++) {
-                    Log.e("moosecrunchers", args[i].toString());
+                for (Object arg : args) {
+                    Log.e("moosecrunchers", arg.toString());
                 }
             }
         });
 
-        // Send hello!
-        mSocket.emit("hello", "wooot");
-
-        mSocket.on("foo", new Emitter.Listener() {
+        mSocket.on("updated counter", new Emitter.Listener() {
             @Override
             public void call(Object... args) {
-                txtView.setText("Count: " + args[0].toString());
+                txtView = (TextView) findViewById(R.id.txtView);
+                if (txtView == null) {
+                    Log.e("moosecrunchers", "Could not find txtView!");
+                    return;
+                }
+
+                if (args.length < 1) {
+                    setText("Error occurred, wrong argument from foo");
+                    return;
+                }
+
+                int counter = (int) args[0];
+                setText("Counter: " + counter);
             }
         });
 
         Log.i("moosecrunchers", "trying to connect..");
         mSocket.connect();
+    }
 
-        setContentView(R.layout.activity_main);
+    protected void setText(String str) {
+        if (txtView == null) {
+            txtView = (TextView) findViewById(R.id.txtView);
+        }
+
+        final String text = str;
+        txtView.post(new Runnable() {
+            @Override
+            public void run() {
+                txtView.setText(text);
+            }
+        });
     }
 }

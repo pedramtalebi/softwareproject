@@ -35,11 +35,10 @@ var counter = 0;
 io.on('connection', (socket) => {
   console.log('User connected!');
   
-  socket.on('hello', (foo) => {
-    console.log('Got from client: ' + foo + ', increasing counter!');
-    counter = counter + 1; // thread-safety, ain't nobody got time fo dat
-
-    socket.emit('foo', counter);
+  socket.on('update request', (foo) => {
+    counter = counter + 1;
+    console.log('counter='+counter);
+    socket.emit('updated counter', counter);
   });
 
   socket.on('disconnect', () => {
