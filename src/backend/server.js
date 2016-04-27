@@ -24,6 +24,29 @@ app.get('/', (req, res) => {
 	res.sendFile(path.join(__dirname + '/views/index.html'));
 });
 
-app.listen(3000, () => {
+import http from 'http';
+import socketio from 'socket.io';
+
+var server = http.Server(app);
+var io = socketio(server);
+
+var counter = 0;
+
+io.on('connection', (socket) => {
+  console.log('User connected!');
+  
+  socket.on('hello', (foo) => {
+    console.log('Got from client: ' + foo + ', increasing counter!');
+    counter = counter + 1; // thread-safety, ain't nobody got time fo dat
+
+    socket.emit('foo', counter);
+  });
+
+  socket.on('disconnect', () => {
+    console.log('user disconnected');
+  });
+});
+
+server.listen(3000, () => {
   console.log('Listening :3000');
 });
