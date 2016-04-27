@@ -1,5 +1,3 @@
-'use strict';
-
 angular.module('mainService', [])
 
 .factory('Main', function($http) {

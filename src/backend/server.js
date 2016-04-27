@@ -16,6 +16,10 @@ app.use(rerouteApi);
 app.use(lineApi);
 app.use(busApi);
 
+app.get('/', function(req, res) {
+	res.sendFile(path.join(__dirname + 'app/views/index.html'));
+});
+
 app.listen(3000, () => {
   console.log('Listening :3000');
 });
