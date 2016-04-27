@@ -1,15 +1,14 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import morgan from 'morgan';
+import path from 'path';
 
 import rerouteApi from './routes/reroute-api';
 import lineApi from './routes/line-api';
 import busApi from './routes/bus-api';
 
-var path = require('path');
-
-mongoose.connect('mongodb://localhost/database');
-//mongoose.connect('mongodb://mongo/softwareproject');
+//mongoose.connect('mongodb://localhost/database');
+mongoose.connect('mongodb://mongo/softwareproject');
 
 var app = express();
 app.use('/', express.static(__dirname + '/public'));
@@ -21,7 +20,7 @@ app.use(rerouteApi);
 app.use(lineApi);
 app.use(busApi);
 
-app.get('/', function(req, res) {
+app.get('/', (req, res) => {
 	res.sendFile(path.join(__dirname + '/views/index.html'));
 });
 
