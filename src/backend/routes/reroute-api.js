@@ -5,8 +5,6 @@ import bodyParser from 'body-parser';
 
 //Internal
 import Reroute from '../model/reroute';
-
-
 const jsonParser = bodyParser.json();
 
 const router = Router();
@@ -44,4 +42,7 @@ router.post('/v1/reroute', jsonParser, (req, res) => {
 
 
 });
+
+//DELETE /reroutes/:id - Removes a specific reroute from the database
+
 
