@@ -13,7 +13,7 @@ var path = {
   FRONT_JS: ['src/frontend/app/app.js', 'src/frontend/app/**/*.js'],
   VIEWS: ['src/frontend/app/views/*.html', 'src/frontend/app/views/partials/*.html'],
   ANGULAR: ['src/frontend/assets/libs/angular/*.*', 'src/frontend/assets/libs/angular-route/*.*'],
-  LIBS: ['src/frontend/assets/libs/bootstrap/dist/**/*.{ttf,woff,eof,svg,min.js,min.css,min.js.map,min.css.map}', 'src/frontend/assets/libs/jquery/dist/*.min.js'],
+  LIBS: ['src/frontend/assets/libs/bootstrap/dist/**/*.{ttf,woff,eof,svg,min.js,min.css,min.js.map,min.css.map}', 'src/frontend/assets/libs/jquery/dist/*.min.js','src/frontend/assets/css/*.css' ],
   DEST: 'dist/'
 };
 
@@ -22,6 +22,7 @@ var server = null;
 gulp.task('watch', function() {
   gulp.watch(path.SERVER_JS, ['server:build', 'server:spawn']);
   gulp.watch(path.FRONT_JS, ['frontend:build', 'frontend:copy']);
+  gulp.watch(path.VIEWS, ['frontend:build', 'frontend:copy']);
 });
 
 gulp.task('server:build', function() {

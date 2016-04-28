@@ -1,0 +1,38 @@
+/* Navbar custom style */
+.navbar-custom {
+    background-color:#0177A9;
+    color:#ffffff;
+    border-radius:0;
+}
+
+.navbar-custom .navbar-nav > li > a {
+    color:#fff;
+}
+.navbar-custom .navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus {
+    color: #ffffff;
+    background-color:transparent;
+}
+.navbar-custom .navbar-brand {
+    color:whitesmoke;
+}
+/* General style for site */
+.pad-section {
+   padding: 50px 0;
+}
+.pad-section img {
+    width: 100%;
+}
+ul{
+    list-style-type: none;    
+}
+.center-div{
+    text-align: center;
+    padding-top:25px;
+}
+.form-control{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+}
+

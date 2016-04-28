@@ -1,1 +1,23 @@
-<h2>Bus lines</h2>
+<div class="container center-div">
+    <div>
+        <h2>Busslinjer Göteborg</h2><br>
+        <div class="form-group"><input placeholder="Sök linje" class="form-control" ng-model="line"></div>
+    </div>
+</div>
+
+<div class="pad-section container">
+    <div class="row">
+        <ul>
+            <li ng-repeat="line in lines | filter:line">
+                <div class="text-center col-md-4 pad-section">
+                    <div class="card">
+                        <img style="max-width:280px;" class="card-img-top" src="http://electrichybrid.volvobuses.com/img/7900l-eh-front45.jpg" alt="Card image cap">
+                        <div class="card-block">
+                            <h4 class="card-title">Linje {{line.linje}}</h4>                    
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

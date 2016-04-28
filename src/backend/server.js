@@ -7,8 +7,8 @@ import rerouteApi from './routes/reroute-api';
 import lineApi from './routes/line-api';
 import busApi from './routes/bus-api';
 
-//mongoose.connect('mongodb://localhost/database');
-mongoose.connect('mongodb://mongo/softwareproject');
+mongoose.connect('mongodb://localhost/database');
+// mongoose.connect('mongodb://mongo/softwareproject');
 
 var app = express();
 app.use('/', express.static(__dirname));
