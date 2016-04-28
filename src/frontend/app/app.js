@@ -1,7 +1,11 @@
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
   'ngRoute',
-  'mainCtrl'
+  'mainCtrl',
+  'ngAnimate',
+  'mgcrea.ngStrap',
+  'mgcrea.ngStrap.modal',
+  'mgcrea.ngStrap.aside'
 ])
 
 .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {

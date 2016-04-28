@@ -1,4 +1,5 @@
 /* Navbar custom style */
+
 .navbar-custom {
     background-color:#0177A9;
     color:#ffffff;
@@ -16,6 +17,9 @@
     color:whitesmoke;
 }
 /* General style for site */
+h2{
+   font-family: 'Open Sans', sans-serif;
+}
 .pad-section {
    padding: 50px 0;
 }
