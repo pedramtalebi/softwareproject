@@ -21,6 +21,7 @@ var server = null;
 
 gulp.task('watch', function() {
   gulp.watch(path.SERVER_JS, ['server:build', 'server:spawn']);
+  gulp.watch(path.FRONT_JS, ['frontend:build', 'frontend:copy']);
 });
 
 gulp.task('server:build', function() {
@@ -32,7 +33,8 @@ gulp.task('server:build', function() {
 });
 
 // task to lint, minify, and concat frontend files
-gulp.task('angular', function() {
+
+gulp.task('frontend:build', function() {
   return gulp.src(path.FRONT_JS)
     .pipe(jshint())
     .pipe(jshint.reporter('default'))
@@ -42,7 +44,8 @@ gulp.task('angular', function() {
     .pipe(gulp.dest(path.DEST));
 });
 
-gulp.task('test', function(){
+
+gulp.task('frontend:copy', function(){
   // the base option sets the relative root for the set of files,
   // preserving the folder structure
   gulp.src(path.VIEWS, {base: 'src/frontend/app'})
@@ -74,7 +77,13 @@ gulp.task('server:spawn', function() {
   });
 });
 
-gulp.task('server', gulpSequence(['server:build', 'server:spawn', 'watch']));
+gulp.task('server', gulpSequence([
+  'frontend:build',
+  'frontend:copy',
+  'server:build', 
+  'server:spawn', 
+  'watch'
+  ]));
 
 process.on('exit', function() {
     if (server) {
