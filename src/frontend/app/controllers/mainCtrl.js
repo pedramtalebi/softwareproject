@@ -2,7 +2,9 @@ angular.module('mainCtrl', [])
 
 .controller('mainController', ['$scope', '$aside', function($scope, $aside) {
     
+    
     $scope.message = 'Software Engineering Project';
+    $scope.aside = {title: 'Nuvarande omdirigeringar', content: "Lista på omdirigeringar"};
     
     $scope.lines = [
         { linje: 16 },
@@ -14,13 +16,5 @@ angular.module('mainCtrl', [])
         { linje: 55 },
         { linje: 60 } 
     ];
-    
-    $scope.aside = {
-        "title": "Nuvarande omdirigerar",
-        "content": ""
-    };
-    
-        
-    
-        
+     
 }]);
