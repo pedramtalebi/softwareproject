@@ -6,12 +6,14 @@ var util = require('gulp-util');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var jshint = require('gulp-jshint');
-// var clean = require('gulp-clean');
+var ngAnnotate = require('gulp-ng-annotate');
 
 var path = {
   SERVER_JS: ['src/backend/**/*.js'],
-  FRONT_JS: ['src/frontend/app/*.js', 'src/frontend/app/**/*.js'],
+  FRONT_JS: ['src/frontend/app/app.js', 'src/frontend/app/**/*.js'],
   VIEWS: ['src/frontend/app/views/*.html', 'src/frontend/app/views/partials/*.html'],
+  ANGULAR: ['src/frontend/assets/libs/angular/*.*', 'src/frontend/assets/libs/angular-route/*.*'],
+  LIBS: ['src/frontend/assets/libs/bootstrap/dist/**/*.{ttf,woff,eof,svg,min.js,min.css,min.js.map,min.css.map}', 'src/frontend/assets/libs/jquery/dist/*.min.js'],
   DEST: 'dist/'
 };
 
@@ -30,20 +32,25 @@ gulp.task('server:build', function() {
 });
 
 // task to lint, minify, and concat frontend files
-gulp.task('watch', function() {
+gulp.task('angular', function() {
   return gulp.src(path.FRONT_JS)
     .pipe(jshint())
     .pipe(jshint.reporter('default'))
+    .pipe(ngAnnotate())
     .pipe(concat('all.js'))
     .pipe(uglify())
     .pipe(gulp.dest(path.DEST));
 });
 
-gulp.task('watch', function(){
+gulp.task('test', function(){
   // the base option sets the relative root for the set of files,
   // preserving the folder structure
   gulp.src(path.VIEWS, {base: 'src/frontend/app'})
   .pipe(gulp.dest(path.DEST));
+  gulp.src(path.ANGULAR, {base:'src/frontend/assets'})
+   .pipe(gulp.dest(path.DEST));
+  gulp.src(path.LIBS, {base:'src/frontend/assets'})
+   .pipe(gulp.dest(path.DEST));
 });
 
 gulp.task('server:spawn', function() {

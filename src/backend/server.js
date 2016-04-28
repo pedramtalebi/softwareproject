@@ -12,7 +12,7 @@ mongoose.connect('mongodb://localhost/database');
 //mongoose.connect('mongodb://mongo/softwareproject');
 
 var app = express();
-app.use('/', express.static(__dirname + '/public'));
+app.use('/', express.static(__dirname));
 
 // log all requests to the console 
 app.use(morgan('dev'));
