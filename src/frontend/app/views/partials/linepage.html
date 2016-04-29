@@ -9,8 +9,13 @@
        <div class="col-md-8">
            <p>kartvy</p>
        </div>
-       <div class="col-md-4">
-           <p>listvy</p>
+       <div class="col-md-4" id="reroute-blue">
+           <h2 class="text-center">Omderigeringar</h2>
+           <div class="pad-section">
+               <li ng-repeat="reroute in reroutes | filter:reroute">
+                 {{reroute.name}}
+               </li>
+           </div>
        </div>
         
     </div>
