@@ -8,20 +8,17 @@ angular.module('myApp', [
   'mgcrea.ngStrap.modal',
   'mgcrea.ngStrap.aside'
 ])
-
-.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
-  
+.config(['$routeProvider',
+  function($routeProvider) {
   $routeProvider.
     when('/', {
       templateUrl : 'views/partials/buslines.html',
       controller  : 'mainController'
     }).
-    when('/:lineid', {
+    when('/:id', {
       templateUrl : 'views/partials/linepage.html',
       controller  : 'lineController'
     })
-    .otherwise({ redirectTo: '/' });
-        
-    $locationProvider.html5Mode(true); 
+    .otherwise({ redirectTo: '/' }); 
 }]);
 
