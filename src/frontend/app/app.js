@@ -2,6 +2,7 @@
 angular.module('myApp', [
   'ngRoute',
   'mainCtrl',
+  'lineCtrl',
   'ngAnimate',
   'mgcrea.ngStrap',
   'mgcrea.ngStrap.modal',
@@ -14,6 +15,10 @@ angular.module('myApp', [
     when('/', {
       templateUrl : 'views/partials/buslines.html',
       controller  : 'mainController'
+    }).
+    when('/:lineid', {
+      templateUrl : 'views/partials/linepage.html',
+      controller  : 'lineController'
     })
     .otherwise({ redirectTo: '/' });
         
