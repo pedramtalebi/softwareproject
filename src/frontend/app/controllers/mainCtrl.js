@@ -17,14 +17,14 @@ angular.module('mainCtrl', [])
         { linje: 60 } 
     ];
     $scope.reroutes = [
-        { linje: 16, plats: 'Korsvägen' },
-        { linje: 17, plats: 'Avenyn' },
-        { linje: 18, plats: 'Backaplan' },
-        { linje: 19, plats: 'Johanneberg' },
-        { linje: 25, plays: 'Avenyn' },
-        { linje: 45, plats: 'Avenyn' },
-        { linje: 55, plats: 'Avenyn' },
-        { linje: 60, plats: 'Brunnsparken' } 
+        { linje: 16, omrade: 'Korsvägen' },
+        { linje: 17, omrade: 'Avenyn' },
+        { linje: 18, omrade: 'Backaplan' },
+        { linje: 19, omrade: 'Johanneberg' },
+        { linje: 25, omrade: 'Avenyn' },
+        { linje: 45, omrade: 'Avenyn' },
+        { linje: 55, omrade: 'Avenyn' },
+        { linje: 60, omrade: 'Brunnsparken' } 
     ];
      
 }]);

@@ -1,19 +1,34 @@
-<section ng-controller="mainController">
-    <div class="aside" tabindex="-1" role="dialog">
-      <div class="aside-dialog">
-        <div class="aside-content">
-          <div class="aside-header" ng-show="title">
-            <button type="button" class="close" ng-click="$hide()">&times;</button>
-            <h4 class="aside-title" ng-bind-html="title"></h4>
-          </div>
-          <div class="aside-body" ng-show="content">
 
-            <h4>Text in aside</h4><hr>
-            
-          </div>
-          <div class="aside-footer">
-          </div>
+<div ng-controller="mainController" class="aside" tabindex="-1" role="dialog">
+  <div style="width:450px" class="aside-dialog">
+    <div class="aside-content">
+      <div class="aside-header" ng-show="title">
+          
+        <button type="button" class="close" ng-click="$hide()">&times;</button>
+        <h4 class="aside-title" ng-bind-html="title"></h4>
+      </div>
+      <div class="aside-body" ng-show="content">
+        <div class="row">
+            <div>
+               <div class="form-group"><input placeholder="Sök på plats eller linje" class="form-control" ng-model="reroute"></div>
+              <ul>
+                <h3 style="display:inline"> <span class="label label-default">Plats</span></h3>&nbsp
+                <h3 style="display:inline"> <span class="label label-default">Linje</span></h3>
+                <li ng-repeat="reroute in reroutes | filter:reroute">
+                  <div style="margin-right:30px; margin-top:20px;">
+                    <h3 style="display:inline"> <span class="label label-primary">{{reroute.omrade}}</span></h3>
+                    <h3 style="display:inline"> <span class="label label-danger">{{reroute.linje}}</span></h3>
+                    <br>
+                    <img style="width:100%; bottom:0; border:1px solid lightgray; margin-top:20px;" src="http://www.fijen.se/wordpress/wp-content/uploads/2012/02/Lindholmen-in-G%C3%B6teborg.jpg">
+                  </div>
+                </li>
+              </ul>
+            </div>
         </div>
       </div>
+      <div class="aside-footer">
+
+      </div>
     </div>
-</section>
+  </div>
+</div>
