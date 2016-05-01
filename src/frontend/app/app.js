@@ -6,7 +6,8 @@ angular.module('myApp', [
   'ngAnimate',
   'mgcrea.ngStrap',
   'mgcrea.ngStrap.modal',
-  'mgcrea.ngStrap.aside'
+  'mgcrea.ngStrap.aside',
+  'ngSanitize'
 ])
 .config(['$routeProvider',
   function($routeProvider) {
