@@ -7,7 +7,8 @@ angular.module('myApp', [
   'mgcrea.ngStrap',
   'mgcrea.ngStrap.modal',
   'mgcrea.ngStrap.aside',
-  'ngSanitize'
+  'ngSanitize',
+  'ngMap'
 ])
 .config(['$routeProvider',
   function($routeProvider) {

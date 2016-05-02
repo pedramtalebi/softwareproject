@@ -12,7 +12,7 @@ var path = {
   SERVER_JS: ['src/backend/**/*.js'],
   FRONT_JS: ['src/frontend/app/app.js', 'src/frontend/app/**/*.js'],
   VIEWS: ['src/frontend/app/views/*.html', 'src/frontend/app/views/partials/*.html'],
-  ANGULAR: ['src/frontend/assets/libs/angular/*.*', 'src/frontend/assets/libs/angular-route/*.*', 'src/frontend/assets/libs/angular-animate/*.*', 'src/frontend/assets/libs/angular-strap/dist/*.*', 'src/frontend/assets/libs/angular-strap/dist/modules/*.*', 'src/frontend/assets/libs/bootstrap-additions/dist/*.*','src/frontend/assets/libs/bootstrap-additions/dist/modules/*.*','src/frontend/assets/libs/angular-motion/dist/*.*','src/frontend/assets/libs/angular-sanitize/*.*'],
+  ANGULAR: ['src/frontend/assets/libs/angular/*.*', 'src/frontend/assets/libs/angular-route/*.*', 'src/frontend/assets/libs/angular-animate/*.*', 'src/frontend/assets/libs/angular-strap/dist/*.*', 'src/frontend/assets/libs/angular-strap/dist/modules/*.*', 'src/frontend/assets/libs/bootstrap-additions/dist/*.*','src/frontend/assets/libs/bootstrap-additions/dist/modules/*.*','src/frontend/assets/libs/angular-motion/dist/*.*','src/frontend/assets/libs/angular-sanitize/*.*', 'src/frontend/assets/libs/ngmap/build/scripts/ng-map.min.js'],
   LIBS: ['src/frontend/assets/libs/bootstrap/dist/**/*.{ttf,woff,eof,svg,min.js,min.css,min.js.map,min.css.map}', 'src/frontend/assets/libs/jquery/dist/*.min.js','src/frontend/assets/css/*.css' ],
   DEST: 'dist/'
 };
