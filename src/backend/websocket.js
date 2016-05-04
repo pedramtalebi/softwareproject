@@ -22,7 +22,7 @@ class WebSocket {
   }
 }
 
-export default function (app) {
+export default (app) => {
   return new WebSocket(app);
 }
 
