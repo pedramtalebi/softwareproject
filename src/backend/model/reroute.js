@@ -1,9 +1,15 @@
 var mongoose = require('mongoose');
 var uuid = require('node-uuid');
+require('mongoose-double')(mongoose);
 
 var rerouteSchema = new mongoose.Schema({
   id: {type: String, unique: true},
-  coordinates: [String],
+  coordinates: [
+    {
+        lat: mongoose.Schema.Types.Double,
+        long: mongoose.Schema.Types.Double
+    }
+  ],
   affectedLines : [String],
 
   created_at: Date,

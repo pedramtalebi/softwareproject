@@ -43,10 +43,9 @@ router.get('/v1/reroute/:id', (req, res) => {
 //Adds a new reroute to the database
 router.post('/v1/reroute', jsonParser, (req, res) => {
 
-    var newReroute = Reroute({
-        id: "",
-        mapPath: ""
-    });
+    var data = req.body;
+
+    var newReroute = Reroute(data);
 
     newReroute.save((err) => {
      if (err) {

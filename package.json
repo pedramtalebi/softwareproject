@@ -25,11 +25,8 @@
     "gulp-jshint": "^2.0.0",
     "gulp-ng-annotate": "^2.0.0",
     "gulp-sequence": "^0.4.5",
-    "gulp-uglify": "^1.5.3",
     "gulp-util": "^3.0.7",
-    "jshint": "^2.9.2",
-    "morgan": "^1.7.0",
-    "path": "^0.12.7"
+    "mongoose-double": "0.0.1"
   },
   "dependencies": {
     "body-parser": "^1.15.0",
