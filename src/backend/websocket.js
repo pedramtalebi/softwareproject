@@ -2,7 +2,7 @@ import http from 'http';
 import socketio from 'socket.io';
 
 class WebSocket {
-  constructor(app) {
+  init(app) {
     this.server = http.Server(app);
     this.io = socketio(this.server);
 
@@ -17,12 +17,12 @@ class WebSocket {
     this.server.listen(port, fn);
   }
 
-  static emit(event, data) {
+  emit(event, data) {
     this.io.emit(event, data);
   }
 }
 
-export default (app) => {
-  return new WebSocket(app);
-}
+var socket = new WebSocket();
+
+export default socket;
 
