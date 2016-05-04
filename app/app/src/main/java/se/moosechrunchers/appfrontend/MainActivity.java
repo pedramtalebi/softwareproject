@@ -9,9 +9,6 @@ import android.widget.TextView;
 
 import java.net.URISyntaxException;
 
-import javax.net.ssl.HostnameVerifier;
-import javax.net.ssl.SSLSession;
-
 import io.socket.client.IO;
 import io.socket.client.Socket;
 import io.socket.emitter.Emitter;
