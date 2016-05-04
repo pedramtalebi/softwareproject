@@ -40,3 +40,8 @@ ul{
     border-radius: 20px;
 }
 
+#reroute-blue{
+    background-color: #0177A9;
+    color: #ffffff;
+    min-height: 400px;
+}
