@@ -1,6 +1,6 @@
 angular.module('mainCtrl', [])
 
-.controller('mainController', ['$scope', '$aside', 'NgMap', function($scope, $aside, NgMap) {
+.controller('mainController', ['$scope', '$aside', function($scope, $aside) {
     
     
     $scope.message = 'Software Engineering Project';
@@ -26,9 +26,6 @@ angular.module('mainCtrl', [])
         { linje: 55, omrade: 'Avenyn' },
         { linje: 60, omrade: 'Brunnsparken' } 
     ];
-    
-    NgMap.getMap().then(function(map) {
-       
-    });
+     
      
 }]);

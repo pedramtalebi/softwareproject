@@ -1,12 +1,12 @@
 <div class="container center-div">
     <div>
-        <h2>Linje {{id}} - Ny rutt</h2><br>
+        <h2>Linje {{id}} - Ny <rutt></rutt></h2><br>
     </div>
 </div>
 
 <div class="pad-section container">
     <div class="row">
-       <div class="col-md-9">
+       <div class="col-md-9 text-center">
         <div>
             <ng-map zoom="70">
                 <directions
@@ -18,6 +18,7 @@
                 </directions>
             </ng-map>
         </div>
+        <button ng-click="addNewRoute(map)" id="new-route-button" type="button" class="btn btn-success">Skicka ny rutt</button>
          <!--Directions path length:
             {{map.directionsRenderers[0].directions.routes[0].overview_path.length}}
         <div id="directions-panel" style="width: 28%; float:left; height: 100%; overflow: auto; padding: 0px 5px">
@@ -31,6 +32,5 @@
                </li>
            </div>
        </div>
-        
     </div>
 </div>

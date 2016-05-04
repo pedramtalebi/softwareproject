@@ -40,8 +40,21 @@ ul{
     border-radius: 20px;
 }
 
+/* Line Page */
+
+ng-map{
+    height:500px;
+    border:1px solid gray;
+}
+
 #reroute-blue{
     background-color: #0177A9;
     color: #ffffff;
-    min-height: 400px;
+    min-height: 500px;
+    border-radius:5px;
+    border:1px solid lightgray;
+}
+
+#new-route-button{
+    margin-top:5px;
 }
