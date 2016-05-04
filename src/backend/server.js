@@ -13,6 +13,8 @@ import busApi from './routes/bus-api';
 mongoose.connect('mongodb://mongo/softwareproject');
 
 var app = express();
+var server = socket(app);
+
 app.use('/', express.static(__dirname));
 
 // log all requests to the console 
@@ -26,6 +28,6 @@ app.get('/', (req, res) => {
 	res.sendFile(path.join(__dirname + '/views/index.html'));
 });
 
-socket(app, 3000, () => {
+server.listen(3000, () => {
   console.log('Listening :3000');
 });

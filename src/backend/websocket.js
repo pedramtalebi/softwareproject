@@ -1,15 +1,28 @@
- import http from 'http';
- import socketio from 'socket.io';
- 
- export default function(app, port, fn) {
-   var server = http.Server(app);
-   var io = socketio(server);
-   
-   global.io = io;
+import http from 'http';
+import socketio from 'socket.io';
 
-   io.on('connection', (socket) => {
-     console.log(socket.id + " connected");
-   });
+class WebSocket {
+  constructor(app) {
+    this.server = http.Server(app);
+    this.io = socketio(this.server);
 
-   server.listen(port, fn);
- }
+    global.io = this.io;
+
+    this.io.on('connection', (socket) => {
+      console.log(socket.id + " connected");
+    });
+  }
+
+  listen(port, fn) {
+    this.server.listen(port, fn);
+  }
+
+  static emit(event, data) {
+    this.io.emit(event, data);
+  }
+}
+
+export default function (app) {
+  return new WebSocket(app);
+}
+
