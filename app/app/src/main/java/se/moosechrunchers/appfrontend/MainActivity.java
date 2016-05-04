@@ -17,16 +17,6 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView txtView;
 
-    private Socket mSocket;
-    {
-        try {
-            String BACKEND_URL = "http://192.168.99.1:3000";
-            mSocket = IO.socket(BACKEND_URL);
-        } catch (URISyntaxException e) {
-            Log.e("moosecrunchers", e.getMessage());
-        }
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,42 +35,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        mSocket.on(Socket.EVENT_CONNECT_TIMEOUT, new Emitter.Listener() {
-            @Override
-            public void call(Object... args) {
-                Log.e("moosecrunchers", "connection timed out!");
-            }
-        });
-        mSocket.on(Socket.EVENT_CONNECT_ERROR, new Emitter.Listener() {
-            @Override
-            public void call(Object... args) {
-                for (Object arg : args) {
-                    Log.e("moosecrunchers", arg.toString());
-                }
-            }
-        });
-
-        mSocket.on("updated counter", new Emitter.Listener() {
-            @Override
-            public void call(Object... args) {
-                txtView = (TextView) findViewById(R.id.txtView);
-                if (txtView == null) {
-                    Log.e("moosecrunchers", "Could not find txtView!");
-                    return;
-                }
-
-                if (args.length < 1) {
-                    setText("Error occurred, wrong argument from foo");
-                    return;
-                }
-
-                int counter = (int) args[0];
-                setText("Counter: " + counter);
-            }
-        });
-
-        Log.i("moosecrunchers", "trying to connect..");
-        mSocket.connect();
     }
 
     protected void setText(String str) {
