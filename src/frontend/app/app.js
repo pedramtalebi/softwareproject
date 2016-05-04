@@ -3,6 +3,7 @@ angular.module('myApp', [
   'ngRoute',
   'mainCtrl',
   'lineCtrl',
+  'rerouteCtrl',
   'ngAnimate',
   'mgcrea.ngStrap',
   'mgcrea.ngStrap.modal',
@@ -17,9 +18,13 @@ angular.module('myApp', [
       templateUrl : 'views/partials/buslines.html',
       controller  : 'mainController'
     }).
-    when('/:id', {
+    when('/linje/:id', {
       templateUrl : 'views/partials/linepage.html',
       controller  : 'lineController'
+    }).
+    when('/reroutes', {
+      templateUrl : 'views/partials/reroutes.html',
+      controller  : 'rerouteController'
     })
     .otherwise({ redirectTo: '/' }); 
 }]);
