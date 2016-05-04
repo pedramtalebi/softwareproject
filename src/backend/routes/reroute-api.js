@@ -2,6 +2,9 @@
 import _ from 'lodash';
 import {Router} from 'express';
 import bodyParser from 'body-parser';
+import mongoose from 'mongoose';
+
+var ObjectId = mongoose.Types.ObjectId;
 
 //Internal
 import Reroute from '../model/reroute';
@@ -57,9 +60,8 @@ router.post('/v1/reroute', jsonParser, (req, res) => {
 
 });
 
-//DELETE /reroutes/:id - Removes a specific reroute from the database
+//DELETE /reroute/:id - Removes a specific reroute from the database
 router.delete('/v1/reroute/:id', jsonParser, (req, res) => {
-
     var id = req.params.id;
 
     Reroute.find ({id: id}, (err, reroute) => {
@@ -68,12 +70,37 @@ router.delete('/v1/reroute/:id', jsonParser, (req, res) => {
         throw err;
       }
 
-      Reroute.remove({
+    Reroute.remove({
         id : id
       }, function(err){
             if(err) res.send(err);
             res.json({message: 'Succesfully deleted reroute with id: ' + id});
       });
     });
+ });
+
+ //POST /reroutes/:id - Modifies an already existing route in the database
+ router.post('/v1/reroute/:id', jsonParser, (req, res) => {
+
+   var id = req.params.id;
+   var reRoute = req.body;
+   console.log(reRoute);
+   console.log(id);
+
+   Reroute.findByIdAndUpdate(ObjectId(id), {
+       $set: {
+            coordinates: reRoute.coordinates,
+            affectedLines: reRoute.affectedLines
+       }
+    }, (err, reroute) => {
+        if (err) {
+            res.send(err);
+            return;
+        }
+
+        res.send(reroute);
+    });
+
+
  });
 

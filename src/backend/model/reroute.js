@@ -3,7 +3,8 @@ var uuid = require('node-uuid');
 
 var rerouteSchema = new mongoose.Schema({
   id: {type: String, unique: true},
-  mapPath: {type: String},
+  coordinates: [String],
+  affectedLines : [String],
 
   created_at: Date,
   updated_at: Date
