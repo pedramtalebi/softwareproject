@@ -4,7 +4,10 @@ var mongoose = require('mongoose');
 var uuid = require('node-uuid');
 
 var lineSchema = new mongoose.Schema({
-    map: {type: String},
+    coordinates: [ {
+      lat: Number,
+      long: Number
+    }],
     nr: {type: String, unique: true},
     buses: [Number],
 
