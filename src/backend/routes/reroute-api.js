@@ -78,13 +78,11 @@ router.delete('/v1/reroute/:id', jsonParser, (req, res) => {
     });
  });
 
- //POST /reroutes/:id - Modifies an already existing route in the database
- router.post('/v1/reroute/:id', jsonParser, (req, res) => {
+ //PUT /reroutes/:id - Modifies an already existing route in the database
+ router.put('/v1/reroute/:id', jsonParser, (req, res) => {
 
    var id = req.params.id;
    var reRoute = req.body;
-   console.log(reRoute);
-   console.log(id);
 
    Reroute.findByIdAndUpdate(ObjectId(id), {
        $set: {
@@ -99,7 +97,5 @@ router.delete('/v1/reroute/:id', jsonParser, (req, res) => {
 
         res.send(reroute);
     });
-
-
  });
 
