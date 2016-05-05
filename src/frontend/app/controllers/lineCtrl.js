@@ -1,6 +1,6 @@
-angular.module('lineCtrl', [])
+angular.module('lineCtrl', ['mainService'])
 
-.controller('lineController', ['$scope','$routeParams','NgMap', function($scope, $routeParams, NgMap) {
+.controller('lineController', ['$scope','$routeParams','NgMap','Lines', function($scope, $routeParams, NgMap, Lines) {
     // Id nummer för specifik linje
     $scope.id = $routeParams.id;
     //Dummie reroutes
@@ -10,6 +10,7 @@ angular.module('lineCtrl', [])
             {name: 'Brunnsparken'},
             {name: 'Domkyrkan'}
         ];
+    // Object and array for saving coordinates 
     $scope.rerouteCoordinates = {};
     $scope.rerouteCoordinatesArray = [];   
     
@@ -23,6 +24,7 @@ angular.module('lineCtrl', [])
             $scope.rerouteCoordinates.long = map.directionsRenderers[0].directions.routes[0].overview_path[i].lng();
             $scope.rerouteCoordinatesArray.push($scope.rerouteCoordinates);
         }
+        Lines.postNewRoute($scope.rerouteCoordinatesArray);
    };
      
 }]);

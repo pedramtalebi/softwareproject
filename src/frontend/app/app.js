@@ -4,6 +4,7 @@ angular.module('myApp', [
   'mainCtrl',
   'lineCtrl',
   'rerouteCtrl',
+  'mainService',
   'ngAnimate',
   'mgcrea.ngStrap',
   'mgcrea.ngStrap.modal',
