@@ -9,28 +9,9 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="se.moosechrunchers.appfrontend.MainActivity">
 
-
-    <LinearLayout
-        android:orientation="vertical"
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        android:name="com.google.android.gms.maps.MapFragment"
+        android:id="@+id/map"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <Button
-            android:id="@+id/btnIncrease"
-            android:text="Increase by calling backend"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/txtView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Hello World!" />
-        </ScrollView>
-
-    </LinearLayout>
+        android:layout_height="match_parent"/>
 </RelativeLayout>

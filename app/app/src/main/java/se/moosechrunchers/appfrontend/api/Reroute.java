@@ -21,7 +21,7 @@ public class Reroute {
         try {
             JSONObject json = (JSONObject) arg;
 
-            reroute.Name = json.getString("name");
+            reroute.Name = "foo"; //json.getString("name");
             reroute.Id = json.getString("_id");
 
             JSONArray jsonCoordinates = json.getJSONArray("coordinates");
@@ -42,7 +42,7 @@ public class Reroute {
             }
 
         } catch (JSONException ex) {
-            Log.e("Reroute", "could not parse json from server");
+            Log.e("Reroute", "could not parse json from server:" + ex.getMessage());
         }
 
         return reroute;
