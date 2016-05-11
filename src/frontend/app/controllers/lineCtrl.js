@@ -13,9 +13,13 @@ angular.module('lineCtrl', ['mainService'])
     // Object and array for saving coordinates 
     $scope.rerouteCoordinates = {};
     $scope.rerouteCoordinatesArray = [];   
+    // Variables from the google API map
+    $scope.origin = '';
+    $scope.destination = '';
     
     NgMap.getMap().then(function(map) {
-       
+       console.log(map.directionsRenderers[0]);
+       console.log(map.directionsRenderers[0].origin);
     });
     
    $scope.addNewRoute = function(map){
@@ -26,5 +30,10 @@ angular.module('lineCtrl', ['mainService'])
         }
         Lines.postNewRoute($scope.rerouteCoordinatesArray);
    };
+   
+   $scope.createMapVariables = function(map){
+       $scope.origin = map.directionsRenderers[0].origin;
+       $scope.destination = map.directionsRenderers[0].destination;
+   }
      
 }]);

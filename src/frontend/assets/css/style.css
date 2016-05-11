@@ -58,3 +58,8 @@ ng-map{
 #new-route-button{
     margin-top:10px;
 }
+
+.modal-content{
+    background-color: #0177A9;
+    color:white;
+}
