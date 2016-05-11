@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Reroute {
+    public String Id;
     public String Name;
     public List<Coordinate> Coordinates;
     public List<Integer> AffectedLines;
@@ -21,6 +22,7 @@ public class Reroute {
             JSONObject json = (JSONObject) arg;
 
             reroute.Name = json.getString("name");
+            reroute.Id = json.getString("_id");
 
             JSONArray jsonCoordinates = json.getJSONArray("coordinates");
             reroute.Coordinates = new ArrayList<>();

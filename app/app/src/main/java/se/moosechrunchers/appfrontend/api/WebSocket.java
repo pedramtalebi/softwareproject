@@ -13,15 +13,16 @@ import io.socket.emitter.Emitter;
 public class WebSocket {
     private Socket mSocket;
 
-    private interface WebSocketListener {
+    public interface WebSocketListener {
         void OnConnect();
         void OnDisconnect();
 
         void OnError(String error);
         void OnTimeout();
 
-        void OnRerouteAdd();
-        void OnRerouteRemove();
+        void OnRerouteAdd(Reroute r);
+        void OnRerouteChange(Reroute r);
+        void OnRerouteRemove(String id);
     }
 
     private List<WebSocketListener> listeners;
@@ -57,6 +58,36 @@ public class WebSocket {
 
                 for (WebSocketListener listener : listeners) {
                     listener.OnError(error);
+                }
+            }
+        });
+
+        mSocket.on(Constants.EVENT_NEW_REROUTE, new Emitter.Listener() {
+            @Override
+            public void call(Object... args) {
+                Reroute r = Reroute.fromJson(args[0]);
+                for(WebSocketListener listener : listeners) {
+                    listener.OnRerouteAdd(r);
+                }
+            }
+        });
+
+        mSocket.on(Constants.EVENT_DEL_REROUTE, new Emitter.Listener() {
+            @Override
+            public void call(Object... args) {
+                Reroute r = Reroute.fromJson(args[0]);
+                for(WebSocketListener listener : listeners) {
+                    listener.OnRerouteRemove(r.Id);
+                }
+            }
+        });
+
+        mSocket.on(Constants.EVENT_CHG_REROUTE, new Emitter.Listener() {
+            @Override
+            public void call(Object... args) {
+                Reroute r = Reroute.fromJson(args[0]);
+                for(WebSocketListener listener : listeners) {
+                    listener.OnRerouteChange(r);
                 }
             }
         });

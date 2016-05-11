@@ -3,51 +3,65 @@ package se.moosechrunchers.appfrontend;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
 
-import java.net.URISyntaxException;
+import se.moosechrunchers.appfrontend.api.Reroute;
+import se.moosechrunchers.appfrontend.api.WebSocket;
 
-import io.socket.client.IO;
-import io.socket.client.Socket;
-import io.socket.emitter.Emitter;
-
-public class MainActivity extends AppCompatActivity {
-
-    private TextView txtView;
+public class MainActivity extends AppCompatActivity implements WebSocket.WebSocketListener {
+    private final static String TAG = "moosecrunchers";
+    WebSocket mSocket = new WebSocket();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        txtView = (TextView)findViewById(R.id.txtView);
-        Button btnIncrease = (Button)findViewById(R.id.btnIncrease);
-
-        assert btnIncrease != null;
-        btnIncrease.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (mSocket != null) {
-                    mSocket.emit("update request", "");
-                }
-            }
-        });
-
+        mSocket.addListener(this);
     }
 
-    protected void setText(String str) {
-        if (txtView == null) {
-            txtView = (TextView) findViewById(R.id.txtView);
-        }
+    @Override
+    protected void onDestroy() {
+        mSocket.removeListener(this);
+        super.onDestroy();
+    }
 
-        final String text = str;
-        txtView.post(new Runnable() {
-            @Override
-            public void run() {
-                txtView.setText(text);
-            }
-        });
+    public void OnConnect() {
+        Log.i(TAG, "Connected to server");
+    }
+    public void OnDisconnect() {
+        Log.i(TAG, "Disconnected from server");
+    }
+
+    public void OnError(String error) {
+        Log.e(TAG, "Error occurred: " + error);
+    }
+    public void OnTimeout() {
+        Log.e(TAG, "Timeout while connecting to server!");
+    }
+
+    public void OnRerouteAdd(Reroute r) {
+        Log.d(TAG, "New reroute added!");
+    }
+
+    public void OnRerouteChange(Reroute r) {
+        Log.d(TAG, "Reroute " + r.Id + " changed!");
+    }
+
+    public void OnRerouteRemove(String id) {
+        Log.d(TAG, "Reroute " + id + " removed");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        mSocket.Disconnect();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        mSocket.Connect();
     }
 }
