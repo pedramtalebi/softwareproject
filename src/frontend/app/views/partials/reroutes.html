@@ -1,0 +1,24 @@
+<div class="container">
+  <h2>Nuvarande omderigeringar</h2>
+    <table class="table">
+    <thead>
+      <tr>
+        <th>Ta bort</th>
+        <th>Linje</th>
+        <th>Område</th>
+        <th>Accepterad</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr class= "info", ng-repeat="currentreroute in currentreroutes | filter:currentreroute">
+          <td><label ng-repeat="currentreroute in currentreroutes | filter:currentreroute">
+          <input type="checkbox" cecklist-model="currentreroute" checklist-value="currentreroute.linje"></input>
+          </label></td>
+          <td>{{currentreroute.linje}}</td>
+          <td>{{currentreroute.omrade}}</td>
+          <td>{{currentreroute.accepted}}</td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+
