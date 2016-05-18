@@ -46,14 +46,11 @@ angular.module('lineCtrl', ['mainService'])
    };
    
    $scope.createMapVariables = function(map){
-<<<<<<< 1b50afcbd2ddcb93cbc3e9e7311869c2b60cd3e9
        $scope.origin = map.directionsRenderers[0].origin;
        $scope.destination = map.directionsRenderers[0].destination;
-=======
        console.log(map.directionsRenderers[0].directions)
     //    $scope.origin = map.directionsRenderers[0].origin;
     //    $scope.destination = map.directionsRenderers[0].destination;
->>>>>>> routing fix
    };
      
 }]);
