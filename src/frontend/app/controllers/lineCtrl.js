@@ -34,6 +34,6 @@ angular.module('lineCtrl', ['mainService'])
    $scope.createMapVariables = function(map){
        $scope.origin = map.directionsRenderers[0].origin;
        $scope.destination = map.directionsRenderers[0].destination;
-   }
+   };
      
 }]);
