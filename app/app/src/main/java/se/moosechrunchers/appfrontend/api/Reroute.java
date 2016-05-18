@@ -15,6 +15,25 @@ public class Reroute {
     public List<Coordinate> Coordinates;
     public List<Integer> AffectedLines;
 
+    @Override
+    public int hashCode() {
+        return Id.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (!(obj instanceof Reroute)){
+            return false;
+        }
+
+        if (obj == this) {
+            return true;
+        }
+
+        Reroute r = (Reroute)obj;
+        return r.Id.equals(this.Id);
+    }
+
     public static Reroute fromJson(final Object arg) {
         Reroute reroute = new Reroute();
 
