@@ -21,7 +21,12 @@ public class Reroute {
         try {
             JSONObject json = (JSONObject) arg;
 
-            reroute.Name = "foo"; //json.getString("name");
+            if (json.has("name")) {
+                reroute.Name = json.getString("name");
+            } else {
+                reroute.Name = "undefined";
+            }
+
             reroute.Id = json.getString("_id");
 
             JSONArray jsonCoordinates = json.getJSONArray("coordinates");

@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity implements WebSocket.WebSock
 
         PolylineOptions opts = new PolylineOptions()
                 .addAll(coords)
-                .width(2)
+                .width(15)
                 .color(Color.GREEN);
         mMap.addPolyline(opts);
 
