@@ -28,7 +28,7 @@ public class WebSocket {
     private List<WebSocketListener> listeners;
 
     public WebSocket() {
-        listeners = new ArrayList<WebSocketListener>();
+        listeners = new ArrayList<>();
 
         try {
             mSocket = IO.socket(Constants.BACKEND_URL);
