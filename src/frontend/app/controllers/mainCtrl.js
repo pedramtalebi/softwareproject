@@ -1,6 +1,6 @@
 angular.module('mainCtrl', [])
 
-.controller('mainController', ['$scope', '$aside', function($scope, $aside) {
+.controller('mainController', ['$scope', '$aside', 'Lines', function($scope, $aside, Lines) {
     
     
     $scope.message = 'Software Engineering Project';
@@ -16,16 +16,21 @@ angular.module('mainCtrl', [])
         { linje: 55 },
         { linje: 60 } 
     ];
-    $scope.reroutes = [
-        { linje: 16, omrade: 'Korsvägen' },
-        { linje: 17, omrade: 'Avenyn' },
-        { linje: 18, omrade: 'Backaplan' },
-        { linje: 19, omrade: 'Johanneberg' },
-        { linje: 25, omrade: 'Avenyn' },
-        { linje: 45, omrade: 'Avenyn' },
-        { linje: 55, omrade: 'Avenyn' },
-        { linje: 60, omrade: 'Brunnsparken' } 
-    ];
+    // $scope.reroutes = [
+    //     { linje: 16, omrade: 'Korsvägen' },
+    //     { linje: 17, omrade: 'Avenyn' },
+    //     { linje: 18, omrade: 'Backaplan' },
+    //     { linje: 19, omrade: 'Johanneberg' },
+    //     { linje: 25, omrade: 'Avenyn' },
+    //     { linje: 45, omrade: 'Avenyn' },
+    //     { linje: 55, omrade: 'Avenyn' },
+    //     { linje: 60, omrade: 'Brunnsparken' } 
+    // ];
+    
+    Lines.getReroutes().success(function(data){ 
+        $scope.reroutes = data; 
+        console.log(data);
+    });
      
      
 }]);

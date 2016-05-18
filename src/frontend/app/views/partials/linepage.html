@@ -8,13 +8,13 @@
     <div class="row">
        <div class="col-md-9 text-center">
             <div>
-                <ng-map zoom="70">
+                <ng-map zoom="14">
                     <directions
                     draggable="true"
                     panel="directions-panel"
                     travel-mode="DRIVING"
-                    origin="Johanneberg Science Park AB, Göteborg"
-                    destination="Lindholmen Science Park AB, Lindholmspiren, Göteborg">
+                    origin="{{origin}}"
+                    destination="{{destination}}">
                     </directions>
                 </ng-map>
             </div>
@@ -34,7 +34,6 @@
                             <p class="modal-title"><p>Du håller på att lägga in en ny rutt för <b>linje {{id}}.</b><br> Stämmer uppgifterna nedan?</p></p>
                         </div>
                         <div class="modal-body">
-                            
                             <h4><b>Start:</b><span style="color:#5cb85c"> {{origin}}</span></h4>
                             <h4><b>Slut:</b> <span style="color:#5cb85c"> {{destination}}</span></h4>
                         </div>
