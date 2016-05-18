@@ -87,6 +87,12 @@ gulp.task('server', gulpSequence([
   'watch'
   ]));
 
+gulp.task('build:release', gulpSequence([
+  'frontend:build',
+  'frontend:copy',
+  'server:build'
+  ]));
+
 process.on('exit', function() {
     if (server) {
       server.kill();
