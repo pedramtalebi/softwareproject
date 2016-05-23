@@ -39,7 +39,18 @@
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span> 
+            </button>
             <a data-template-url="views/partials/busline.tpl.html" data-placement="left" data-animation="am-slide-left" bs-aside="aside" class="navbar-brand" data-container="body"><span id="menuIcon" class="glyphicon glyphicon-th-large"></a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#/">Hem</a></li>
+                <li><a href="/#/reroutes">Omdirigeringar</a></li>
+            </ul>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -50,7 +61,7 @@
     <!-- /.container -->
 </nav>
 
-<div class="pad-section" ng-view></div>
+<div class="pad-section" ng-view autoscroll="true"></div>
 
 </body>
 </html>

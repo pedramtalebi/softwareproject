@@ -15,6 +15,10 @@ angular.module('mainService', [])
 		return $http.post('/v1/reroute', data);
 	};
 	
+	// Delete route 
+	linesFactory.deleteReroute = function(id){
+		return $http.delete('/v1/reroute/'+ id);	
+	};
 
 	// return our entire linesFactory object
 	return linesFactory;

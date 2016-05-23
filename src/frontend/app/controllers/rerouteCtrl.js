@@ -1,16 +1,33 @@
 angular.module('rerouteCtrl', [])
 
-.controller('rerouteController', ['$scope', function($scope) {
-
-    $scope.currentreroutes = [
-        { linje: 16, omrade: 'Korsvägen', 	accepted: 'Ja' },
-        { linje: 17, omrade: 'Avenyn', 		accepted: 'Ja' },
-        { linje: 18, omrade: 'Backaplan', 	accepted: 'Nej' },
-        { linje: 19, omrade: 'Johanneberg',	accepted: 'Ja' },
-        { linje: 25, omrade: 'Avenyn', 		accepted: 'Nej' },
-        { linje: 45, omrade: 'Avenyn', 		accepted: 'Nej' },
-        { linje: 55, omrade: 'Avenyn', 		accepted: 'Ja' },
-        { linje: 60, omrade: 'Brunnsparken',accepted: 'Ja' } 
-    ];
-
+.controller('rerouteController', ['$scope', 'NgMap','Lines', function($scope, NgMap, Lines) {
+    
+    // Variables for modal 
+    $scope.affectedLines = '';
+    $scope.datum = '';
+    $scope.tid = '';
+    $scope.id = '';
+    
+    $scope.allRerouteFlags = [];
+    Lines.getReroutes().success(function(data){ 
+        $scope.reroutesAll = data; 
+        // console.log($scope.reroutes[0].coordinates[0].lat);
+    });
+    
+    $scope.addForModal = function(data){
+        $scope.affectedLines = data.affectedLines;
+        $scope.datum = data.created_at.slice(0,10);
+        $scope.tid = data.created_at.slice(11,16);
+        $scope.id = data._id;
+    };
+    
+    $scope.deleteReroute = function(id){
+        Lines.deleteReroute(id).success(function(data){
+           console.log('deleted');
+           Lines.getReroutes().success(function(data){ 
+            $scope.reroutesAll = data; 
+            // console.log($scope.reroutes[0].coordinates[0].lat);
+            });
+        });
+    };
 }]);
