@@ -40,7 +40,7 @@ WebSocket.listen(3000, () => {
         throw err;
       }
 
-      console.log('New connection!');
+      console.log('New connection !');
       _.forEach(reroutes, (reroute) => {
         socket.emit('new reroute', reroute);
       });

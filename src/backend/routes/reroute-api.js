@@ -62,7 +62,6 @@ router.post('/v1/reroute', jsonParser, (req, res) => {
 
 //DELETE /reroute/:id - Removes a specific reroute from the database
 router.delete('/v1/reroute/:id', jsonParser, (req, res) => {
-
     var id = req.params.id;
 
     Reroute.findByIdAndRemove(id, (err, reroute) => {
@@ -73,7 +72,7 @@ router.delete('/v1/reroute/:id', jsonParser, (req, res) => {
 
         res.send(reroute);
 
-        WebSocket.emit('deleted reroute with id ', id);
+        WebSocket.emit('delete reroute', id);
     });
 });
 
