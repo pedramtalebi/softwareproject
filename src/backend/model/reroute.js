@@ -3,6 +3,7 @@ var uuid = require('node-uuid');
 
 var rerouteSchema = new mongoose.Schema({
   id: {type: String, unique: true},
+  name: {type: String},
   coordinates: [
     {
         lat: Number,
