@@ -4,6 +4,7 @@ import morgan from 'morgan';
 import path from 'path';
 
 import WebSocket from './websocket';
+import Reroute from './model/reroute';
 
 var app = express();
 WebSocket.init(app);
@@ -13,7 +14,7 @@ import lineApi from './routes/line-api';
 import busApi from './routes/bus-api';
 
 mongoose.connect('mongodb://localhost/database');
-// mongoose.connect('mongodb://mongo/softwareproject');
+//mongoose.connect('mongodb://mongo/softwareproject');
 
 app.use('/', express.static(__dirname));
 
@@ -30,4 +31,19 @@ app.get('/', (req, res) => {
 
 WebSocket.listen(3000, () => {
   console.log('Listening :3000');
+
+  // Send all reroutes upon connection
+  WebSocket.on('connection', (socket) => {
+    Reroute.find({}, (err, reroutes) => {
+      if (err) {
+        console.log(err);
+        throw err;
+      }
+
+      console.log('New connection!');
+      _.forEach(reroutes, (reroute) => {
+        socket.emit('new reroute', reroute);
+      });
+    });
+  });
 });

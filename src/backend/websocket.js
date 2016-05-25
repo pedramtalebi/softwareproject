@@ -7,10 +7,6 @@ class WebSocket {
     this.io = socketio(this.server);
 
     global.io = this.io;
-
-    this.io.on('connection', (socket) => {
-      console.log(socket.id + " connected");
-    });
   }
 
   listen(port, fn) {
@@ -19,6 +15,10 @@ class WebSocket {
 
   emit(event, data) {
     this.io.emit(event, data);
+  }
+  
+  on(event, fn) {
+    this.io.on(event, fn);
   }
 }
 
