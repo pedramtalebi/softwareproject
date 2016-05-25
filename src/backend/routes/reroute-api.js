@@ -3,6 +3,7 @@ import _ from 'lodash';
 import {Router} from 'express';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
+import _ from 'lodash';
 
 var ObjectId = mongoose.Types.ObjectId;
 
