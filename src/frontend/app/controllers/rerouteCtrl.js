@@ -26,7 +26,6 @@ angular.module('rerouteCtrl', [])
            console.log('deleted');
            Lines.getReroutes().success(function(data){ 
             $scope.reroutesAll = data; 
-            // console.log($scope.reroutes[0].coordinates[0].lat);
             });
         });
     };
