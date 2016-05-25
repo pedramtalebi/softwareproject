@@ -10,9 +10,9 @@ angular.module('lineCtrl', ['mainService'])
     Lines.getReroutes().success(function(data){
         for(i=0; i<data.length; i++){
             if(data[i].affectedLines.indexOf(busLine)!=-1){
-                $scope.reroutesSpecLine.push(data[i].id);
+                $scope.reroutesSpecLine.push(data[i].name);
             }
-        } 
+        }
     });
 
     var obj = {};
@@ -45,7 +45,7 @@ angular.module('lineCtrl', ['mainService'])
         obj.name = map.directionsRenderers[0].directions.routes[0].summary;
                 
         Lines.postNewRoute(obj).success(function(data) {
-            console.log("reroute added");
+            $scope.reroutesSpecLine.push(data.name);
         });
    };
 }]);

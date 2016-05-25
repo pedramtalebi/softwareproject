@@ -7,6 +7,7 @@ angular.module('rerouteCtrl', [])
     $scope.datum = '';
     $scope.tid = '';
     $scope.id = '';
+    $scope.name = '';
     
     $scope.allRerouteFlags = [];
     Lines.getReroutes().success(function(data){ 
@@ -19,6 +20,7 @@ angular.module('rerouteCtrl', [])
         $scope.datum = data.created_at.slice(0,10);
         $scope.tid = data.created_at.slice(11,16);
         $scope.id = data._id;
+        $scope.name = data.name;
     };
     
     $scope.deleteReroute = function(id){
