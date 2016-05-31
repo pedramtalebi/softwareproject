@@ -4,13 +4,13 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class Coordinate {
-    public float Lat, Long;
+    public float latitude, longitude;
 
     public static Coordinate fromJson(JSONObject json) throws JSONException {
         Coordinate coord = new Coordinate();
 
-        coord.Lat = (float)json.getDouble("lat");
-        coord.Long = (float)json.getDouble("long");
+        coord.latitude = (float)json.getDouble("lat");
+        coord.longitude = (float)json.getDouble("long");
 
         return coord;
     }

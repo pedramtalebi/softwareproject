@@ -14,15 +14,15 @@ public class WebSocket {
     private Socket mSocket;
 
     public interface WebSocketListener {
-        void OnConnect();
-        void OnDisconnect();
+        void onConnect();
+        void onDisconnect();
 
-        void OnError(String error);
-        void OnTimeout();
+        void onError(String error);
+        void onTimeout();
 
-        void OnRerouteAdd(Reroute r);
-        void OnRerouteChange(Reroute r);
-        void OnRerouteRemove(String id);
+        void onRerouteAdd(Reroute r);
+        void onRerouteChange(Reroute r);
+        void onRerouteRemove(String id);
     }
 
     private List<WebSocketListener> listeners;
@@ -42,7 +42,7 @@ public class WebSocket {
                 Log.e("moosecrunchers", "connection timed out!");
 
                 for (WebSocketListener listener : listeners) {
-                    listener.OnTimeout();
+                    listener.onTimeout();
                 }
             }
         });
@@ -50,14 +50,15 @@ public class WebSocket {
         mSocket.on(Socket.EVENT_CONNECT_ERROR, new Emitter.Listener() {
             @Override
             public void call(Object... args) {
-                String error = "";
+                StringBuilder buf = new StringBuilder();
                 for (Object arg : args) {
                     Log.e("moosecrunchers", arg.toString());
-                    error += arg.toString();
+                    buf.append(arg.toString());
                 }
 
+                String error = buf.toString();
                 for (WebSocketListener listener : listeners) {
-                    listener.OnError(error);
+                    listener.onError(error);
                 }
             }
         });
@@ -67,7 +68,7 @@ public class WebSocket {
             public void call(Object... args) {
                 Reroute r = Reroute.fromJson(args[0]);
                 for(WebSocketListener listener : listeners) {
-                    listener.OnRerouteAdd(r);
+                    listener.onRerouteAdd(r);
                 }
             }
         });
@@ -75,9 +76,9 @@ public class WebSocket {
         mSocket.on(Constants.EVENT_DEL_REROUTE, new Emitter.Listener() {
             @Override
             public void call(Object... args) {
-                Reroute r = Reroute.fromJson(args[0]);
+                String id = args[0].toString();
                 for(WebSocketListener listener : listeners) {
-                    listener.OnRerouteRemove(r.Id);
+                    listener.onRerouteRemove(id);
                 }
             }
         });
@@ -87,31 +88,31 @@ public class WebSocket {
             public void call(Object... args) {
                 Reroute r = Reroute.fromJson(args[0]);
                 for(WebSocketListener listener : listeners) {
-                    listener.OnRerouteChange(r);
+                    listener.onRerouteChange(r);
                 }
             }
         });
     }
 
     /*
-        Connect to the server
+        connect to the server
      */
-    public void Connect() {
+    public void connect() {
         mSocket.connect();
 
         for (WebSocketListener listener : listeners) {
-            listener.OnConnect();
+            listener.onConnect();
         }
     }
 
     /*
-        Disconnect from the server
+        disconnect from the server
      */
-    public void Disconnect() {
+    public void disconnect() {
         mSocket.disconnect();
 
         for (WebSocketListener listener : listeners) {
-            listener.OnDisconnect();
+            listener.onDisconnect();
         }
     }
 

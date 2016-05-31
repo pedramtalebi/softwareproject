@@ -1,5 +1,6 @@
 package se.moosechrunchers.appfrontend;
 
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.location.Location;
 import android.support.v7.app.AppCompatActivity;
@@ -77,23 +78,23 @@ public class MainActivity extends AppCompatActivity implements WebSocket.WebSock
         super.onDestroy();
     }
 
-    public void OnConnect() {
+    public void onConnect() {
         Log.i(TAG, "Connected to server");
     }
 
-    public void OnDisconnect() {
+    public void onDisconnect() {
         Log.i(TAG, "Disconnected from server");
     }
 
-    public void OnError(String error) {
+    public void onError(String error) {
         Log.e(TAG, "Error occurred: " + error);
     }
 
-    public void OnTimeout() {
+    public void onTimeout() {
         Log.e(TAG, "Timeout while connecting to server!");
     }
 
-    public void OnRerouteAdd(Reroute r) {
+    public void onRerouteAdd(Reroute r) {
         if (mMap == null) {
             Log.e(TAG, "Could not get gmap!");
             return;
@@ -113,7 +114,7 @@ public class MainActivity extends AppCompatActivity implements WebSocket.WebSock
         }
     }
 
-    public void OnRerouteChange(Reroute r) {
+    public void onRerouteChange(Reroute r) {
         lockActiveReroutes();
 
         int index = mActiveReroutes.indexOf(r);
@@ -133,7 +134,7 @@ public class MainActivity extends AppCompatActivity implements WebSocket.WebSock
         Log.d(TAG, "Reroute " + r.Id + " changed!");
     }
 
-    public void OnRerouteRemove(String id) {
+    public void onRerouteRemove(String id) {
         Reroute r = new Reroute();
         r.Id = id;
 
@@ -146,9 +147,25 @@ public class MainActivity extends AppCompatActivity implements WebSocket.WebSock
         }
 
         mActiveReroutes.remove(index);
-        unlockActiveReroutes();
+
+        if (index == currentRerouteIndex) {
+            currentRerouteIndex++;
+            if (currentRerouteIndex >= mActiveReroutes.size()) {
+                currentRerouteIndex = 0;
+            }
+
+            try {
+                Reroute nextReroute = mActiveReroutes.get(currentRerouteIndex);
+                showReroute(nextReroute);
+            } catch (Resources.NotFoundException ex) {
+                // Ignore this case ..
+                mMap.clear();
+            }
+        }
 
         updateNumberStatus();
+
+        unlockActiveReroutes();
 
         Log.d(TAG, "Reroute " + id + " removed");
     }
@@ -164,7 +181,7 @@ public class MainActivity extends AppCompatActivity implements WebSocket.WebSock
                 // Collect latitude-longitude points from coordinates
                 List<LatLng> coords = new ArrayList<>();
                 for (Coordinate coord : r.Coordinates) {
-                    coords.add(new LatLng(coord.Lat, coord.Long));
+                    coords.add(new LatLng(coord.latitude, coord.longitude));
                 }
 
                 // Draw the polygon line
@@ -211,7 +228,7 @@ public class MainActivity extends AppCompatActivity implements WebSocket.WebSock
             mRoutesMutex.acquire();
         } catch (InterruptedException ex) {
             Log.e(TAG, "could not acquire activeReroute semaphore: " + ex.getMessage());
-            System.exit(1);
+            throw new RuntimeException("could not acquire semaphore!");
         }
     }
 
@@ -230,7 +247,7 @@ public class MainActivity extends AppCompatActivity implements WebSocket.WebSock
     protected void onPause() {
         super.onPause();
 
-        mSocket.Disconnect();
+        mSocket.disconnect();
 
         // Disconnecting the client invalidates it.
         mGoogleApiClient.disconnect();
@@ -240,7 +257,7 @@ public class MainActivity extends AppCompatActivity implements WebSocket.WebSock
     protected void onResume() {
         super.onResume();
 
-        mSocket.Connect();
+        mSocket.connect();
 
         mGoogleApiClient.connect();
     }
