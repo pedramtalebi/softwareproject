@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://findbugs.sourceforge.net/xsl/default.xsl"?>
+
+<BugCollection version="3.0.1" sequence="0" timestamp="1464679005264" analysisTimestamp="1464678997395" release="">
+  <Project projectName="app">
+    <Jar>/Users/cpluss/git/softwareproject/app/app/build/intermediates/classes/debug/se/moosechrunchers/appfrontend/api/Constants.class</Jar>
+    <Jar>/Users/cpluss/git/softwareproject/app/app/build/intermediates/classes/debug/se/moosechrunchers/appfrontend/api/Coordinate.class</Jar>
+    <Jar>/Users/cpluss/git/softwareproject/app/app/build/intermediates/classes/debug/se/moosechrunchers/appfrontend/api/Reroute.class</Jar>
+    <Jar>/Users/cpluss/git/softwareproject/app/app/build/intermediates/classes/debug/se/moosechrunchers/appfrontend/api/WebSocket$1.class</Jar>
+    <Jar>/Users/cpluss/git/softwareproject/app/app/build/intermediates/classes/debug/se/moosechrunchers/appfrontend/api/WebSocket$2.class</Jar>
+    <Jar>/Users/cpluss/git/softwareproject/app/app/build/intermediates/classes/debug/se/moosechrunchers/appfrontend/api/WebSocket$3.class</Jar>
+    <Jar>/Users/cpluss/git/softwareproject/app/app/build/intermediates/classes/debug/se/moosechrunchers/appfrontend/api/WebSocket$4.class</Jar>
+    <Jar>/Users/cpluss/git/softwareproject/app/app/build/intermediates/classes/debug/se/moosechrunchers/appfrontend/api/WebSocket$5.class</Jar>
+    <Jar>/Users/cpluss/git/softwareproject/app/app/build/intermediates/classes/debug/se/moosechrunchers/appfrontend/api/WebSocket$WebSocketListener.class</Jar>
+    <Jar>/Users/cpluss/git/softwareproject/app/app/build/intermediates/classes/debug/se/moosechrunchers/appfrontend/api/WebSocket.class</Jar>
+    <Jar>/Users/cpluss/git/softwareproject/app/app/build/intermediates/classes/debug/se/moosechrunchers/appfrontend/BuildConfig.class</Jar>
+    <Jar>/Users/cpluss/git/softwareproject/app/app/build/intermediates/classes/debug/se/moosechrunchers/appfrontend/MainActivity$1.class</Jar>
+    <Jar>/Users/cpluss/git/softwareproject/app/app/build/intermediates/classes/debug/se/moosechrunchers/appfrontend/MainActivity$2.class</Jar>
+    <Jar>/Users/cpluss/git/softwareproject/app/app/build/intermediates/classes/debug/se/moosechrunchers/appfrontend/MainActivity$3.class</Jar>
+    <Jar>/Users/cpluss/git/softwareproject/app/app/build/intermediates/classes/debug/se/moosechrunchers/appfrontend/MainActivity.class</Jar>
+    <Jar>/Users/cpluss/git/softwareproject/app/app/build/intermediates/classes/debug/se/moosechrunchers/appfrontend/R$anim.class</Jar>
+    <Jar>/Users/cpluss/git/softwareproject/app/app/build/intermediates/classes/debug/se/moosechrunchers/appfrontend/R$attr.class</Jar>
+    <Jar>/Users/cpluss/git/softwareproject/app/app/build/intermediates/classes/debug/se/moosechrunchers/appfrontend/R$bool.class</Jar>
+    <Jar>/Users/cpluss/git/softwareproject/app/app/build/intermediates/classes/debug/se/moosechrunchers/appfrontend/R$color.class</Jar>
+    <Jar>/Users/cpluss/git/softwareproject/app/app/build/intermediates/classes/debug/se/moosechrunchers/appfrontend/R$dimen.class</Jar>
+    <Jar>/Users/cpluss/git/softwareproject/app/app/build/intermediates/classes/debug/se/moosechrunchers/appfrontend/R$drawable.class</Jar>
+    <Jar>/Users/cpluss/git/softwareproject/app/app/build/intermediates/classes/debug/se/moosechrunchers/appfrontend/R$id.class</Jar>
+    <Jar>/Users/cpluss/git/softwareproject/app/app/build/intermediates/classes/debug/se/moosechrunchers/appfrontend/R$integer.class</Jar>
+    <Jar>/Users/cpluss/git/softwareproject/app/app/build/intermediates/classes/debug/se/moosechrunchers/appfrontend/R$layout.class</Jar>
+    <Jar>/Users/cpluss/git/softwareproject/app/app/build/intermediates/classes/debug/se/moosechrunchers/appfrontend/R$menu.class</Jar>
+    <Jar>/Users/cpluss/git/softwareproject/app/app/build/intermediates/classes/debug/se/moosechrunchers/appfrontend/R$mipmap.class</Jar>
+    <Jar>/Users/cpluss/git/softwareproject/app/app/build/intermediates/classes/debug/se/moosechrunchers/appfrontend/R$raw.class</Jar>
+    <Jar>/Users/cpluss/git/softwareproject/app/app/build/intermediates/classes/debug/se/moosechrunchers/appfrontend/R$string.class</Jar>
+    <Jar>/Users/cpluss/git/softwareproject/app/app/build/intermediates/classes/debug/se/moosechrunchers/appfrontend/R$style.class</Jar>
+    <Jar>/Users/cpluss/git/softwareproject/app/app/build/intermediates/classes/debug/se/moosechrunchers/appfrontend/R$styleable.class</Jar>
+    <Jar>/Users/cpluss/git/softwareproject/app/app/build/intermediates/classes/debug/se/moosechrunchers/appfrontend/R.class</Jar>
+    <AuxClasspathEntry>/Users/cpluss/Library/Android/sdk/platforms/android-23/android.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/Library/Android/sdk/platforms/android-23/data/res</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/git/softwareproject/app/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.1/jars/classes.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/git/softwareproject/app/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.1/jars/libs/internal_impl-23.2.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/git/softwareproject/app/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.1/res</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/.gradle/caches/modules-2/files-2.1/io.socket/socket.io-client/0.7.0/ce278c97bc9f74c7945d647f6d441d6013163362/socket.io-client-0.7.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/git/softwareproject/app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/git/softwareproject/app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/jars/classes.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/git/softwareproject/app/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.2.1/res</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/git/softwareproject/app/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.2.1/jars/classes.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/git/softwareproject/app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-identity/8.4.0/res</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/git/softwareproject/app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-identity/8.4.0/jars/classes.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.2.1/support-annotations-23.2.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp-ws/3.0.1/bd9b51a0188fc8f14bf840a0d326755545206116/okhttp-ws-3.0.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/git/softwareproject/app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-vision/8.4.0/jars/classes.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/git/softwareproject/app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-vision/8.4.0/res</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/git/softwareproject/app/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.2.1/jars/classes.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/git/softwareproject/app/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.2.1/res</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.6.0/98476622f10715998eacf9240d6b479f12c66143/okio-1.6.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/git/softwareproject/app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-auth/8.4.0/res</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/git/softwareproject/app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-auth/8.4.0/jars/classes.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/git/softwareproject/app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/8.4.0/jars/classes.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/git/softwareproject/app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/8.4.0/res</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/git/softwareproject/app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/8.4.0/res</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/git/softwareproject/app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/8.4.0/jars/classes.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/git/softwareproject/app/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/jars/classes.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/git/softwareproject/app/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.0.1/b34c1f2d993044656e87f88970b6818e99e886ba/okhttp-3.0.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/git/softwareproject/app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/8.4.0/res</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/git/softwareproject/app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/8.4.0/jars/classes.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/git/softwareproject/app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-nearby/8.4.0/res</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/git/softwareproject/app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-nearby/8.4.0/jars/classes.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/git/softwareproject/app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/8.4.0/jars/classes.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/git/softwareproject/app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/8.4.0/res</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/git/softwareproject/app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-drive/8.4.0/res</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/git/softwareproject/app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-drive/8.4.0/jars/classes.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/git/softwareproject/app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-safetynet/8.4.0/res</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/git/softwareproject/app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-safetynet/8.4.0/jars/classes.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/git/softwareproject/app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.4.0/jars/classes.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/git/softwareproject/app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.4.0/res</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/.gradle/caches/modules-2/files-2.1/io.socket/engine.io-client/0.7.0/c1b1d30e2d2231b2eae1438a44943a409b976dac/engine.io-client-0.7.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/git/softwareproject/app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/8.4.0/res</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/git/softwareproject/app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/8.4.0/jars/classes.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/git/softwareproject/app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appinvite/8.4.0/jars/classes.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/git/softwareproject/app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appinvite/8.4.0/res</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/git/softwareproject/app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/8.4.0/res</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/git/softwareproject/app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/8.4.0/jars/classes.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/git/softwareproject/app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-games/8.4.0/jars/classes.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/git/softwareproject/app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-games/8.4.0/res</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/git/softwareproject/app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-fitness/8.4.0/jars/classes.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/git/softwareproject/app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-fitness/8.4.0/res</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/git/softwareproject/app/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/jars/classes.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/git/softwareproject/app/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/jars/libs/internal_impl-23.0.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/git/softwareproject/app/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/res</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/git/softwareproject/app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/8.4.0/jars/classes.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/git/softwareproject/app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/8.4.0/res</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/git/softwareproject/app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appstate/8.4.0/jars/classes.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/git/softwareproject/app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appstate/8.4.0/res</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/git/softwareproject/app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/8.4.0/res</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/git/softwareproject/app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/8.4.0/jars/classes.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/git/softwareproject/app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-panorama/8.4.0/jars/classes.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/git/softwareproject/app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-panorama/8.4.0/res</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/git/softwareproject/app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/8.4.0/jars/classes.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/git/softwareproject/app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/8.4.0/res</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/git/softwareproject/app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics/8.4.0/res</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/git/softwareproject/app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics/8.4.0/jars/classes.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/git/softwareproject/app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-measurement/8.4.0/jars/classes.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/git/softwareproject/app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-measurement/8.4.0/res</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/git/softwareproject/app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/8.4.0/jars/classes.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/cpluss/git/softwareproject/app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/8.4.0/res</AuxClasspathEntry>
+    <SrcDir>/Users/cpluss/git/softwareproject/app/app/build/generated/source/r/debug</SrcDir>
+    <SrcDir>/Users/cpluss/git/softwareproject/app/app/build/generated/source/aidl/debug</SrcDir>
+    <SrcDir>/Users/cpluss/git/softwareproject/app/app/build/generated/source/buildConfig/debug</SrcDir>
+    <SrcDir>/Users/cpluss/git/softwareproject/app/app/build/generated/source/rs/debug</SrcDir>
+    <SrcDir>/Users/cpluss/git/softwareproject/app/app/build/generated/res/rs/debug</SrcDir>
+    <SrcDir>/Users/cpluss/git/softwareproject/app/app/build/generated/source/r/androidTest/debug</SrcDir>
+    <SrcDir>/Users/cpluss/git/softwareproject/app/app/build/generated/source/aidl/androidTest/debug</SrcDir>
+    <SrcDir>/Users/cpluss/git/softwareproject/app/app/build/generated/source/buildConfig/androidTest/debug</SrcDir>
+    <SrcDir>/Users/cpluss/git/softwareproject/app/app/build/generated/source/rs/androidTest/debug</SrcDir>
+    <SrcDir>/Users/cpluss/git/softwareproject/app/app/build/generated/res/rs/androidTest/debug</SrcDir>
+    <SrcDir>/Users/cpluss/git/softwareproject/app/app/src/main/res</SrcDir>
+    <SrcDir>/Users/cpluss/git/softwareproject/app/app/src/main/java</SrcDir>
+    <SrcDir>/Users/cpluss/git/softwareproject/app/app/src/androidTest/java</SrcDir>
+    <Plugin id="edu.umd.cs.findbugs.plugins.core" enabled="true"/>
+  </Project>
+  <BugInstance type="URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD" priority="2" rank="18" abbrev="UrF" category="STYLE" instanceHash="56e2860928fa396d3313ab0081c6490c" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Unread public/protected field</ShortMessage>
+    <LongMessage>Unread public/protected field: se.moosechrunchers.appfrontend.api.Reroute.Name</LongMessage>
+    <Class classname="se.moosechrunchers.appfrontend.api.Reroute" primary="true">
+      <SourceLine classname="se.moosechrunchers.appfrontend.api.Reroute" sourcefile="Reroute.java" sourcepath="se/moosechrunchers/appfrontend/api/Reroute.java" relSourcepath="src/main/java/se/moosechrunchers/appfrontend/api/Reroute.java">
+        <Message>In Reroute.java</Message>
+      </SourceLine>
+      <Message>In class se.moosechrunchers.appfrontend.api.Reroute</Message>
+    </Class>
+    <Field classname="se.moosechrunchers.appfrontend.api.Reroute" name="Name" signature="Ljava/lang/String;" isStatic="false" primary="true">
+      <SourceLine classname="se.moosechrunchers.appfrontend.api.Reroute" sourcefile="Reroute.java" sourcepath="se/moosechrunchers/appfrontend/api/Reroute.java" relSourcepath="src/main/java/se/moosechrunchers/appfrontend/api/Reroute.java">
+        <Message>In Reroute.java</Message>
+      </SourceLine>
+      <Message>Field se.moosechrunchers.appfrontend.api.Reroute.Name</Message>
+    </Field>
+    <SourceLine classname="se.moosechrunchers.appfrontend.api.Reroute" primary="true" start="44" end="44" startBytecode="29" endBytecode="29" sourcefile="Reroute.java" sourcepath="se/moosechrunchers/appfrontend/api/Reroute.java" relSourcepath="src/main/java/se/moosechrunchers/appfrontend/api/Reroute.java">
+      <Message>At Reroute.java:[line 44]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugCategory category="STYLE">
+    <Description>Dodgy code</Description>
+  </BugCategory>
+  <BugPattern type="URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD" abbrev="UrF" category="STYLE">
+    <ShortDescription>Unread public/protected field</ShortDescription>
+    <Details><![CDATA[
+
+  <p> This field is never read.&nbsp;
+The field is public or protected, so perhaps
+    it is intended to be used with classes not seen as part of the analysis. If not,
+consider removing it from the class.</p>
+
+    ]]></Details>
+  </BugPattern>
+  <BugCode abbrev="UrF">
+    <Description>Unread field</Description>
+  </BugCode>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Tue, 31 May 2016 09:05:01 +0200" total_classes="31" referenced_classes="299" total_bugs="1" total_size="2130" num_packages="2" java_version="1.6.0_65" vm_version="20.65-b04-468" cpu_seconds="51.14" clock_seconds="79.68" peak_mbytes="413.89" alloc_mbytes="1271.69" gc_seconds="0.24" priority_2="1">
+    <FileStats path="se/moosechrunchers/appfrontend/BuildConfig.java" bugCount="0" size="11"/>
+    <FileStats path="se/moosechrunchers/appfrontend/MainActivity.java" bugCount="0" size="239"/>
+    <FileStats path="se/moosechrunchers/appfrontend/R.java" bugCount="0" size="1728"/>
+    <FileStats path="se/moosechrunchers/appfrontend/api/Constants.java" bugCount="0" size="7"/>
+    <FileStats path="se/moosechrunchers/appfrontend/api/Coordinate.java" bugCount="0" size="10"/>
+    <FileStats path="se/moosechrunchers/appfrontend/api/Reroute.java" bugCount="1" size="37" bugHash="2b535a2e5602db41ab18af011f152517"/>
+    <FileStats path="se/moosechrunchers/appfrontend/api/WebSocket.java" bugCount="0" size="98"/>
+    <PackageStats package="se.moosechrunchers.appfrontend" total_bugs="0" total_types="21" total_size="1978">
+      <ClassStats class="se.moosechrunchers.appfrontend.BuildConfig" sourceFile="BuildConfig.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="se.moosechrunchers.appfrontend.MainActivity" sourceFile="MainActivity.java" interface="false" size="191" bugs="0"/>
+      <ClassStats class="se.moosechrunchers.appfrontend.MainActivity$1" sourceFile="MainActivity.java" interface="false" size="24" bugs="0"/>
+      <ClassStats class="se.moosechrunchers.appfrontend.MainActivity$2" sourceFile="MainActivity.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="se.moosechrunchers.appfrontend.MainActivity$3" sourceFile="MainActivity.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="se.moosechrunchers.appfrontend.R" sourceFile="R.java" interface="false" size="3" bugs="0"/>
+      <ClassStats class="se.moosechrunchers.appfrontend.R$anim" sourceFile="R.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="se.moosechrunchers.appfrontend.R$attr" sourceFile="R.java" interface="false" size="263" bugs="0"/>
+      <ClassStats class="se.moosechrunchers.appfrontend.R$bool" sourceFile="R.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="se.moosechrunchers.appfrontend.R$color" sourceFile="R.java" interface="false" size="118" bugs="0"/>
+      <ClassStats class="se.moosechrunchers.appfrontend.R$dimen" sourceFile="R.java" interface="false" size="91" bugs="0"/>
+      <ClassStats class="se.moosechrunchers.appfrontend.R$drawable" sourceFile="R.java" interface="false" size="168" bugs="0"/>
+      <ClassStats class="se.moosechrunchers.appfrontend.R$id" sourceFile="R.java" interface="false" size="161" bugs="0"/>
+      <ClassStats class="se.moosechrunchers.appfrontend.R$integer" sourceFile="R.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="se.moosechrunchers.appfrontend.R$layout" sourceFile="R.java" interface="false" size="48" bugs="0"/>
+      <ClassStats class="se.moosechrunchers.appfrontend.R$menu" sourceFile="R.java" interface="false" size="4" bugs="0"/>
+      <ClassStats class="se.moosechrunchers.appfrontend.R$mipmap" sourceFile="R.java" interface="false" size="4" bugs="0"/>
+      <ClassStats class="se.moosechrunchers.appfrontend.R$raw" sourceFile="R.java" interface="false" size="4" bugs="0"/>
+      <ClassStats class="se.moosechrunchers.appfrontend.R$string" sourceFile="R.java" interface="false" size="78" bugs="0"/>
+      <ClassStats class="se.moosechrunchers.appfrontend.R$style" sourceFile="R.java" interface="false" size="333" bugs="0"/>
+      <ClassStats class="se.moosechrunchers.appfrontend.R$styleable" sourceFile="R.java" interface="false" size="420" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="se.moosechrunchers.appfrontend.api" total_bugs="1" total_types="10" total_size="152" priority_2="1">
+      <ClassStats class="se.moosechrunchers.appfrontend.api.Constants" sourceFile="Constants.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="se.moosechrunchers.appfrontend.api.Coordinate" sourceFile="Coordinate.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="se.moosechrunchers.appfrontend.api.Reroute" sourceFile="Reroute.java" interface="false" size="37" bugs="1" priority_2="1"/>
+      <ClassStats class="se.moosechrunchers.appfrontend.api.WebSocket" sourceFile="WebSocket.java" interface="false" size="36" bugs="0"/>
+      <ClassStats class="se.moosechrunchers.appfrontend.api.WebSocket$1" sourceFile="WebSocket.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="se.moosechrunchers.appfrontend.api.WebSocket$2" sourceFile="WebSocket.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="se.moosechrunchers.appfrontend.api.WebSocket$3" sourceFile="WebSocket.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="se.moosechrunchers.appfrontend.api.WebSocket$4" sourceFile="WebSocket.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="se.moosechrunchers.appfrontend.api.WebSocket$5" sourceFile="WebSocket.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="se.moosechrunchers.appfrontend.api.WebSocket$WebSocketListener" sourceFile="WebSocket.java" interface="true" size="8" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.FindBugs2" totalMilliseconds="1894" invocations="2" avgMicrosecondsPerInvocation="947498" maxMicrosecondsPerInvocation="1609774" standardDeviationMircosecondsPerInvocation="662276"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="879" invocations="980" avgMicrosecondsPerInvocation="897" maxMicrosecondsPerInvocation="44843" standardDeviationMircosecondsPerInvocation="2785"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="645" invocations="299" avgMicrosecondsPerInvocation="2160" maxMicrosecondsPerInvocation="64287" standardDeviationMircosecondsPerInvocation="5847"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="369" invocations="299" avgMicrosecondsPerInvocation="1234" maxMicrosecondsPerInvocation="52797" standardDeviationMircosecondsPerInvocation="4621"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="206" invocations="155" avgMicrosecondsPerInvocation="1332" maxMicrosecondsPerInvocation="26868" standardDeviationMircosecondsPerInvocation="2908"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="203" invocations="991" avgMicrosecondsPerInvocation="205" maxMicrosecondsPerInvocation="11200" standardDeviationMircosecondsPerInvocation="515"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="197" invocations="84" avgMicrosecondsPerInvocation="2348" maxMicrosecondsPerInvocation="21249" standardDeviationMircosecondsPerInvocation="4122"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="186" invocations="299" avgMicrosecondsPerInvocation="623" maxMicrosecondsPerInvocation="9159" standardDeviationMircosecondsPerInvocation="1232"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="164" invocations="80" avgMicrosecondsPerInvocation="2059" maxMicrosecondsPerInvocation="21030" standardDeviationMircosecondsPerInvocation="3387"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="156" invocations="80" avgMicrosecondsPerInvocation="1962" maxMicrosecondsPerInvocation="14739" standardDeviationMircosecondsPerInvocation="3152"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildObligationPolicyDatabase" totalMilliseconds="154" invocations="299" avgMicrosecondsPerInvocation="516" maxMicrosecondsPerInvocation="12076" standardDeviationMircosecondsPerInvocation="1025"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.OverridingEqualsNotSymmetrical" totalMilliseconds="153" invocations="299" avgMicrosecondsPerInvocation="514" maxMicrosecondsPerInvocation="13542" standardDeviationMircosecondsPerInvocation="1354"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="148" invocations="299" avgMicrosecondsPerInvocation="495" maxMicrosecondsPerInvocation="9111" standardDeviationMircosecondsPerInvocation="1071"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="141" invocations="82" avgMicrosecondsPerInvocation="1720" maxMicrosecondsPerInvocation="20376" standardDeviationMircosecondsPerInvocation="3370"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="139" invocations="348" avgMicrosecondsPerInvocation="401" maxMicrosecondsPerInvocation="19581" standardDeviationMircosecondsPerInvocation="1286"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="113" invocations="80" avgMicrosecondsPerInvocation="1420" maxMicrosecondsPerInvocation="14997" standardDeviationMircosecondsPerInvocation="2496"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.EqualsOperandShouldHaveClassCompatibleWithThis" totalMilliseconds="104" invocations="299" avgMicrosecondsPerInvocation="350" maxMicrosecondsPerInvocation="11371" standardDeviationMircosecondsPerInvocation="897"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History></History>
+</BugCollection>
